@@ -1,0 +1,16 @@
+title: "Mint Black Tea"
+category: free
+servings: 1
+prep_time: "3 min"
+cook_time: "0 min"
+tags: [drink]
+
+ingredients:
+  - { name: black tea bag, amount: 1, unit: bag, kcal: 2, protein: 0, carbs: 0, fat: 0 }
+  - { name: mint leaves, amount: 5, unit: leaves, kcal: 1, protein: 0, carbs: 0, fat: 0 }
+  - { name: sugar, amount: 16, unit: g, kcal: 62, protein: 0, carbs: 16, fat: 0 }
+
+instructions:
+  - Boil water and add mint leaves. Steep for 2 minutes.
+  - Add the tea bag and steep for another 2 minutes.
+  - Stir in sugar and serve.

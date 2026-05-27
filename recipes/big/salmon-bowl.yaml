@@ -1,0 +1,21 @@
+title: "Salmon Rice Bowl"
+category: big
+servings: 1
+prep_time: "10 min"
+cook_time: "20 min"
+tags: [high_protein, healthy, omega3]
+
+ingredients:
+  - { name: salmon, amount: 150, unit: g, kcal: 312, protein: 30, carbs: 0, fat: 20 }
+  - { name: rice, amount: 170, unit: g, kcal: 221, protein: 4.6, carbs: 48, fat: 0.5 }
+  - { name: avocado, amount: 60, unit: g, kcal: 96, protein: 1.2, carbs: 5, fat: 9 }
+  - { name: soy sauce, amount: 20, unit: ml, kcal: 11, protein: 1.6, carbs: 1, fat: 0 }
+  - { name: spinach, amount: 50, unit: g, kcal: 12, protein: 1.5, carbs: 1.8, fat: 0.2 }
+  - { name: sesame oil, amount: 5, unit: ml, kcal: 44, protein: 0, carbs: 0, fat: 5 }
+
+instructions:
+  - Season salmon with salt and pepper. Pan-sear or bake at 400°F for 15 minutes.
+  - Cook rice according to package directions.
+  - Slice avocado and wash the spinach.
+  - Assemble bowl: rice, spinach, flaked salmon, avocado slices.
+  - Drizzle with soy sauce and sesame oil.

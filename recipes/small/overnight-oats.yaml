@@ -1,0 +1,18 @@
+title: "Overnight Oats"
+category: small
+servings: 1
+prep_time: "5 min"
+cook_time: "0 min"
+tags: [quick, healthy]
+
+ingredients:
+  - { name: oats, amount: 36, unit: g, kcal: 140, protein: 6.1, carbs: 24, fat: 2.5 }
+  - { name: oat milk, amount: 150, unit: ml, kcal: 71, protein: 1.5, carbs: 10.5, fat: 2.3 }
+  - { name: honey, amount: 10, unit: g, kcal: 30, protein: 0, carbs: 8, fat: 0 }
+  - { name: chia seeds, amount: 8, unit: g, kcal: 39, protein: 1.4, carbs: 3.4, fat: 2.5 }
+  - { name: blueberries, amount: 23, unit: g, kcal: 13, protein: 0.2, carbs: 3.2, fat: 0.1 }
+
+instructions:
+  - Combine oats, milk, honey, and chia seeds in a jar.
+  - Stir well, cover, and refrigerate overnight.
+  - Top with blueberries before serving.

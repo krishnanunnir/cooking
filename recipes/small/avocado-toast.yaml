@@ -1,0 +1,19 @@
+title: "Avocado Toast"
+category: small
+servings: 1
+prep_time: "5 min"
+cook_time: "5 min"
+tags: [quick, vegetarian]
+
+ingredients:
+  - { name: bread, amount: 1, unit: slice, kcal: 70, protein: 2.5, carbs: 13, fat: 1 }
+  - { name: avocado, amount: 80, unit: g, kcal: 128, protein: 1.6, carbs: 7, fat: 12 }
+  - { name: eggs, amount: 1, unit: large, kcal: 77, protein: 6.5, carbs: 0.6, fat: 5.5 }
+  - { name: lemon juice, amount: 5, unit: ml, kcal: 1, protein: 0, carbs: 0.3, fat: 0 }
+  - { name: red pepper flakes, amount: 0.5, unit: tsp, kcal: 3, protein: 0, carbs: 0.5, fat: 0 }
+
+instructions:
+  - Toast the bread until golden and crispy.
+  - Mash the avocado with lemon juice, salt, and pepper.
+  - Fry the egg sunny-side up or to your preference.
+  - Spread avocado on toast, top with the egg, and sprinkle red pepper flakes.

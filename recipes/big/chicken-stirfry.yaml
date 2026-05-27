@@ -1,0 +1,23 @@
+title: "Chicken Stir Fry"
+category: big
+servings: 2
+prep_time: "15 min"
+cook_time: "10 min"
+tags: [high_protein, vegetables]
+
+ingredients:
+  - { name: chicken breast, amount: 420, unit: g, kcal: 693, protein: 130, carbs: 0, fat: 15 }
+  - { name: broccoli, amount: 280, unit: g, kcal: 95, protein: 7.8, carbs: 20, fat: 1.1 }
+  - { name: bell pepper, amount: 1, unit: large, kcal: 31, protein: 1, carbs: 6, fat: 0.3 }
+  - { name: soy sauce, amount: 40, unit: ml, kcal: 21, protein: 3.2, carbs: 2, fat: 0 }
+  - { name: garlic, amount: 3, unit: cloves, kcal: 12, protein: 0.5, carbs: 2.7, fat: 0 }
+  - { name: olive oil, amount: 20, unit: ml, kcal: 177, protein: 0, carbs: 0, fat: 20 }
+  - { name: rice, amount: 280, unit: g, kcal: 364, protein: 7.6, carbs: 78, fat: 0.8 }
+
+instructions:
+  - Dice chicken breast into bite-sized pieces. Season with salt and pepper.
+  - Heat oil in a wok or large pan over high heat.
+  - Stir-fry chicken for 4-5 minutes until cooked through. Remove and set aside.
+  - Add broccoli, sliced bell pepper, and minced garlic. Stir-fry for 2-3 minutes.
+  - Return chicken to the pan. Add soy sauce and toss everything together.
+  - Serve over steamed rice.

@@ -32,10 +32,10 @@
           <div class="meta-item">
             <div class="val"><input type="number" id="servings-input" value="1" min="1" step="1" style="width:48px;text-align:center;font-size:1.1rem;font-weight:700;border:1px solid #ddd;border-radius:6px;padding:4px"></div>
             <div class="lbl">Servings</div></div>
-          <div class="meta-item"><div class="val" id="kcalserv">635</div><div class="lbl">kcal/serving</div></div>
+          <div class="meta-item"><div class="val" id="kcalserv">632</div><div class="lbl">kcal/serving</div></div>
           <div class="meta-item">
             <div class="val" style="display:flex;align-items:center;gap:6px;justify-content:center">
-              <span id="tot-kcal-display" style="font-size:1.1rem;font-weight:600">635</span>
+              <span id="tot-kcal-display" style="font-size:1.1rem;font-weight:600">632</span>
               <button id="pin-btn" class="pin-btn" title="Lock total calories. Increase one = others shrink."><span id="pin-icon">✏️</span> <span id="pin-label">Unlocked</span></button>
             </div>
             <div class="lbl">Total kcal <span id="pin-status" style="color:#888">(unlocked)</span></div>
@@ -75,9 +75,9 @@
               <td class="c-fat">0.5g</td>
             </tr>
             <tr>
-              <td>olive oil</td>
+              <td>coconut oil</td>
               <td><input type="number" value="12" step="1" class="amt-input" data-unit="ml"> <span class="amt-unit">ml</span></td>
-              <td class="c-kcal">106</td>
+              <td class="c-kcal">103</td>
               <td class="c-pro">0g</td>
               <td class="c-carb">0g</td>
               <td class="c-fat">12g</td>
@@ -92,14 +92,14 @@
             </tr>
               <tr class="total">
                 <td><strong>Total</strong></td><td></td>
-                <td id="tot-kcal"><strong>635</strong></td>
+                <td id="tot-kcal"><strong>632</strong></td>
                 <td id="tot-pro"><strong>63g</strong></td>
                 <td id="tot-carb"><strong>46.7g</strong></td>
                 <td id="tot-fat"><strong>21g</strong></td>
               </tr>
               <tr class="per-serving">
                 <td><strong>Per serving</strong></td><td></td>
-                <td id="per-kcal"><strong>635</strong></td>
+                <td id="per-kcal"><strong>632</strong></td>
                 <td id="per-pro"><strong>63g</strong></td>
                 <td id="per-carb"><strong>46.7g</strong></td>
                 <td id="per-fat"><strong>21g</strong></td>
@@ -114,7 +114,7 @@
         </div>
         
         <script>
-        const DATA = [{"name": "chicken breast", "unit": "g", "amount": 180, "kcal_p100": 165.0, "protein_p100": 31.1, "carbs_p100": 0.0, "fat_p100": 3.6}, {"name": "roti", "unit": "pieces", "amount": 2, "kcal_p100": 8000.0, "protein_p100": 200.0, "carbs_p100": 1600.0, "fat_p100": 100.0}, {"name": "mixed vegetables", "unit": "g", "amount": 100, "kcal_p100": 60.0, "protein_p100": 2.5, "carbs_p100": 12.0, "fat_p100": 0.5}, {"name": "olive oil", "unit": "ml", "amount": 12, "kcal_p100": 883.3, "protein_p100": 0.0, "carbs_p100": 0.0, "fat_p100": 100.0}, {"name": "garlic", "unit": "cloves", "amount": 3, "kcal_p100": 400.0, "protein_p100": 16.7, "carbs_p100": 90.0, "fat_p100": 0.0}];
+        const DATA = [{"name": "chicken breast", "unit": "g", "amount": 180, "kcal_p100": 165.0, "protein_p100": 31.1, "carbs_p100": 0.0, "fat_p100": 3.6}, {"name": "roti", "unit": "pieces", "amount": 2, "kcal_p100": 8000.0, "protein_p100": 200.0, "carbs_p100": 1600.0, "fat_p100": 100.0}, {"name": "mixed vegetables", "unit": "g", "amount": 100, "kcal_p100": 60.0, "protein_p100": 2.5, "carbs_p100": 12.0, "fat_p100": 0.5}, {"name": "coconut oil", "unit": "ml", "amount": 12, "kcal_p100": 858.3, "protein_p100": 0.0, "carbs_p100": 0.0, "fat_p100": 100.0}, {"name": "garlic", "unit": "cloves", "amount": 3, "kcal_p100": 400.0, "protein_p100": 16.7, "carbs_p100": 90.0, "fat_p100": 0.0}];
         const servingsInput = document.getElementById('servings-input');
         const tbody = document.getElementById('nut-tbody');
         const inputs = tbody.querySelectorAll('.amt-input');

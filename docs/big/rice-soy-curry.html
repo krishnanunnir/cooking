@@ -32,10 +32,10 @@
           <div class="meta-item">
             <div class="val"><input type="number" id="servings-input" value="1" min="1" step="1" style="width:48px;text-align:center;font-size:1.1rem;font-weight:700;border:1px solid #ddd;border-radius:6px;padding:4px"></div>
             <div class="lbl">Servings</div></div>
-          <div class="meta-item"><div class="val" id="kcalserv">698</div><div class="lbl">kcal/serving</div></div>
+          <div class="meta-item"><div class="val" id="kcalserv">696</div><div class="lbl">kcal/serving</div></div>
           <div class="meta-item">
             <div class="val" style="display:flex;align-items:center;gap:6px;justify-content:center">
-              <span id="tot-kcal-display" style="font-size:1.1rem;font-weight:600">698</span>
+              <span id="tot-kcal-display" style="font-size:1.1rem;font-weight:600">696</span>
               <button id="pin-btn" class="pin-btn" title="Lock total calories. Increase one = others shrink."><span id="pin-icon">✏️</span> <span id="pin-label">Unlocked</span></button>
             </div>
             <div class="lbl">Total kcal <span id="pin-status" style="color:#888">(unlocked)</span></div>
@@ -99,9 +99,9 @@
               <td class="c-fat">0.2g</td>
             </tr>
             <tr>
-              <td>olive oil</td>
+              <td>coconut oil</td>
               <td><input type="number" value="10" step="1" class="amt-input" data-unit="ml"> <span class="amt-unit">ml</span></td>
-              <td class="c-kcal">88</td>
+              <td class="c-kcal">86</td>
               <td class="c-pro">0g</td>
               <td class="c-carb">0g</td>
               <td class="c-fat">10g</td>
@@ -124,14 +124,14 @@
             </tr>
               <tr class="total">
                 <td><strong>Total</strong></td><td></td>
-                <td id="tot-kcal"><strong>698</strong></td>
+                <td id="tot-kcal"><strong>696</strong></td>
                 <td id="tot-pro"><strong>37.4g</strong></td>
                 <td id="tot-carb"><strong>102.8g</strong></td>
                 <td id="tot-fat"><strong>15.8g</strong></td>
               </tr>
               <tr class="per-serving">
                 <td><strong>Per serving</strong></td><td></td>
-                <td id="per-kcal"><strong>698</strong></td>
+                <td id="per-kcal"><strong>696</strong></td>
                 <td id="per-pro"><strong>37.4g</strong></td>
                 <td id="per-carb"><strong>102.8g</strong></td>
                 <td id="per-fat"><strong>15.8g</strong></td>
@@ -146,7 +146,7 @@
         </div>
         
         <script>
-        const DATA = [{"name": "rice", "unit": "g", "amount": 80, "kcal_p100": 355.0, "protein_p100": 7.0, "carbs_p100": 77.5, "fat_p100": 0.5}, {"name": "soy chunks", "unit": "g", "amount": 50, "kcal_p100": 344.0, "protein_p100": 50.0, "carbs_p100": 20.0, "fat_p100": 7.6}, {"name": "carrot", "unit": "g", "amount": 50, "kcal_p100": 42.0, "protein_p100": 1.0, "carbs_p100": 10.0, "fat_p100": 0.2}, {"name": "peas", "unit": "g", "amount": 50, "kcal_p100": 82.0, "protein_p100": 5.4, "carbs_p100": 14.0, "fat_p100": 0.4}, {"name": "onion", "unit": "g", "amount": 80, "kcal_p100": 40.0, "protein_p100": 1.1, "carbs_p100": 9.0, "fat_p100": 0.1}, {"name": "tomato", "unit": "g", "amount": 100, "kcal_p100": 18.0, "protein_p100": 0.9, "carbs_p100": 3.9, "fat_p100": 0.2}, {"name": "olive oil", "unit": "ml", "amount": 10, "kcal_p100": 880.0, "protein_p100": 0.0, "carbs_p100": 0.0, "fat_p100": 100.0}, {"name": "garlic", "unit": "cloves", "amount": 3, "kcal_p100": 400.0, "protein_p100": 16.7, "carbs_p100": 90.0, "fat_p100": 0.0}, {"name": "curry powder", "unit": "g", "amount": 10, "kcal_p100": 300.0, "protein_p100": 13.0, "carbs_p100": 50.0, "fat_p100": 10.0}];
+        const DATA = [{"name": "rice", "unit": "g", "amount": 80, "kcal_p100": 355.0, "protein_p100": 7.0, "carbs_p100": 77.5, "fat_p100": 0.5}, {"name": "soy chunks", "unit": "g", "amount": 50, "kcal_p100": 344.0, "protein_p100": 50.0, "carbs_p100": 20.0, "fat_p100": 7.6}, {"name": "carrot", "unit": "g", "amount": 50, "kcal_p100": 42.0, "protein_p100": 1.0, "carbs_p100": 10.0, "fat_p100": 0.2}, {"name": "peas", "unit": "g", "amount": 50, "kcal_p100": 82.0, "protein_p100": 5.4, "carbs_p100": 14.0, "fat_p100": 0.4}, {"name": "onion", "unit": "g", "amount": 80, "kcal_p100": 40.0, "protein_p100": 1.1, "carbs_p100": 9.0, "fat_p100": 0.1}, {"name": "tomato", "unit": "g", "amount": 100, "kcal_p100": 18.0, "protein_p100": 0.9, "carbs_p100": 3.9, "fat_p100": 0.2}, {"name": "coconut oil", "unit": "ml", "amount": 10, "kcal_p100": 860.0, "protein_p100": 0.0, "carbs_p100": 0.0, "fat_p100": 100.0}, {"name": "garlic", "unit": "cloves", "amount": 3, "kcal_p100": 400.0, "protein_p100": 16.7, "carbs_p100": 90.0, "fat_p100": 0.0}, {"name": "curry powder", "unit": "g", "amount": 10, "kcal_p100": 300.0, "protein_p100": 13.0, "carbs_p100": 50.0, "fat_p100": 10.0}];
         const servingsInput = document.getElementById('servings-input');
         const tbody = document.getElementById('nut-tbody');
         const inputs = tbody.querySelectorAll('.amt-input');

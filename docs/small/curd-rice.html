@@ -32,10 +32,10 @@
           <div class="meta-item">
             <div class="val"><input type="number" id="servings-input" value="1" min="1" step="1" style="width:48px;text-align:center;font-size:1.1rem;font-weight:700;border:1px solid #ddd;border-radius:6px;padding:4px"></div>
             <div class="lbl">Servings</div></div>
-          <div class="meta-item"><div class="val" id="kcalserv">299</div><div class="lbl">kcal/serving</div></div>
+          <div class="meta-item"><div class="val" id="kcalserv">300</div><div class="lbl">kcal/serving</div></div>
           <div class="meta-item">
             <div class="val" style="display:flex;align-items:center;gap:6px;justify-content:center">
-              <span id="tot-kcal-display" style="font-size:1.1rem;font-weight:600">299</span>
+              <span id="tot-kcal-display" style="font-size:1.1rem;font-weight:600">300</span>
               <button id="pin-btn" class="pin-btn" title="Lock total calories. Increase one = others shrink."><span id="pin-icon">✏️</span> <span id="pin-label">Unlocked</span></button>
             </div>
             <div class="lbl">Total kcal <span id="pin-status" style="color:#888">(unlocked)</span></div>
@@ -75,9 +75,9 @@
               <td class="c-fat">0.4g</td>
             </tr>
             <tr>
-              <td>olive oil</td>
+              <td>ghee</td>
               <td><input type="number" value="4" step="1" class="amt-input" data-unit="ml"> <span class="amt-unit">ml</span></td>
-              <td class="c-kcal">35</td>
+              <td class="c-kcal">36</td>
               <td class="c-pro">0g</td>
               <td class="c-carb">0g</td>
               <td class="c-fat">4g</td>
@@ -92,14 +92,14 @@
             </tr>
               <tr class="total">
                 <td><strong>Total</strong></td><td></td>
-                <td id="tot-kcal"><strong>299</strong></td>
+                <td id="tot-kcal"><strong>300</strong></td>
                 <td id="tot-pro"><strong>18g</strong></td>
                 <td id="tot-carb"><strong>42.3g</strong></td>
                 <td id="tot-fat"><strong>6.2g</strong></td>
               </tr>
               <tr class="per-serving">
                 <td><strong>Per serving</strong></td><td></td>
-                <td id="per-kcal"><strong>299</strong></td>
+                <td id="per-kcal"><strong>300</strong></td>
                 <td id="per-pro"><strong>18g</strong></td>
                 <td id="per-carb"><strong>42.3g</strong></td>
                 <td id="per-fat"><strong>6.2g</strong></td>
@@ -114,7 +114,7 @@
         </div>
         
         <script>
-        const DATA = [{"name": "rice", "unit": "g", "amount": 45, "kcal_p100": 355.6, "protein_p100": 7.1, "carbs_p100": 77.8, "fat_p100": 0.4}, {"name": "yogurt", "unit": "g", "amount": 130, "kcal_p100": 59.2, "protein_p100": 10.0, "carbs_p100": 3.6, "fat_p100": 0.7}, {"name": "milk", "unit": "ml", "amount": 40, "kcal_p100": 42.5, "protein_p100": 3.5, "carbs_p100": 5.0, "fat_p100": 1.0}, {"name": "olive oil", "unit": "ml", "amount": 4, "kcal_p100": 875.0, "protein_p100": 0.0, "carbs_p100": 0.0, "fat_p100": 100.0}, {"name": "mustard seeds", "unit": "g", "amount": 2, "kcal_p100": 500.0, "protein_p100": 20.0, "carbs_p100": 30.0, "fat_p100": 35.0}];
+        const DATA = [{"name": "rice", "unit": "g", "amount": 45, "kcal_p100": 355.6, "protein_p100": 7.1, "carbs_p100": 77.8, "fat_p100": 0.4}, {"name": "yogurt", "unit": "g", "amount": 130, "kcal_p100": 59.2, "protein_p100": 10.0, "carbs_p100": 3.6, "fat_p100": 0.7}, {"name": "milk", "unit": "ml", "amount": 40, "kcal_p100": 42.5, "protein_p100": 3.5, "carbs_p100": 5.0, "fat_p100": 1.0}, {"name": "ghee", "unit": "ml", "amount": 4, "kcal_p100": 900.0, "protein_p100": 0.0, "carbs_p100": 0.0, "fat_p100": 100.0}, {"name": "mustard seeds", "unit": "g", "amount": 2, "kcal_p100": 500.0, "protein_p100": 20.0, "carbs_p100": 30.0, "fat_p100": 35.0}];
         const servingsInput = document.getElementById('servings-input');
         const tbody = document.getElementById('nut-tbody');
         const inputs = tbody.querySelectorAll('.amt-input');

@@ -12,7 +12,7 @@ ingredients:
   - { name: peas, amount: 50, unit: g, kcal: 41, protein: 2.7, carbs: 7, fat: 0.2 }
   - { name: onion, amount: 80, unit: g, kcal: 32, protein: 0.9, carbs: 7.2, fat: 0.1 }
   - { name: tomato, amount: 100, unit: g, kcal: 18, protein: 0.9, carbs: 3.9, fat: 0.2 }
-  - { name: olive oil, amount: 10, unit: ml, kcal: 88, protein: 0, carbs: 0, fat: 10 }
+  - { name: coconut oil, amount: 10, unit: ml, kcal: 86, protein: 0, carbs: 0, fat: 10 }
   - { name: garlic, amount: 3, unit: cloves, kcal: 12, protein: 0.5, carbs: 2.7, fat: 0 }
   - { name: curry powder, amount: 10, unit: g, kcal: 30, protein: 1.3, carbs: 5, fat: 1 }
 

@@ -9,7 +9,7 @@ ingredients:
   - { name: chicken breast, amount: 180, unit: g, kcal: 297, protein: 56, carbs: 0, fat: 6.5 }
   - { name: roti, amount: 2, unit: pieces, kcal: 160, protein: 4, carbs: 32, fat: 2 }
   - { name: mixed vegetables, amount: 100, unit: g, kcal: 60, protein: 2.5, carbs: 12, fat: 0.5 }
-  - { name: olive oil, amount: 12, unit: ml, kcal: 106, protein: 0, carbs: 0, fat: 12 }
+  - { name: coconut oil, amount: 12, unit: ml, kcal: 103, protein: 0, carbs: 0, fat: 12 }
   - { name: garlic, amount: 3, unit: cloves, kcal: 12, protein: 0.5, carbs: 2.7, fat: 0 }
 
 instructions:

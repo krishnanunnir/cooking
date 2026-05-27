@@ -9,7 +9,7 @@ ingredients:
   - { name: rice, amount: 45, unit: g, kcal: 160, protein: 3.2, carbs: 35, fat: 0.2 }
   - { name: yogurt, amount: 130, unit: g, kcal: 77, protein: 13, carbs: 4.7, fat: 0.9 }
   - { name: milk, amount: 40, unit: ml, kcal: 17, protein: 1.4, carbs: 2, fat: 0.4 }
-  - { name: olive oil, amount: 4, unit: ml, kcal: 35, protein: 0, carbs: 0, fat: 4 }
+  - { name: ghee, amount: 4, unit: ml, kcal: 36, protein: 0, carbs: 0, fat: 4 }
   - { name: mustard seeds, amount: 2, unit: g, kcal: 10, protein: 0.4, carbs: 0.6, fat: 0.7 }
 
 instructions:

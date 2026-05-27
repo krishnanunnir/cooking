@@ -1,0 +1,20 @@
+title: "Lemon Rice"
+category: small
+servings: 1
+prep_time: "5 min"
+cook_time: "10 min"
+tags: [quick, vegetarian, south_indian]
+
+ingredients:
+  - { name: rice, amount: 45, unit: g, kcal: 160, protein: 3.2, carbs: 35, fat: 0.2 }
+  - { name: coconut oil, amount: 7, unit: ml, kcal: 60, protein: 0, carbs: 0, fat: 7 }
+  - { name: peanuts, amount: 8, unit: g, kcal: 46, protein: 2.1, carbs: 1.3, fat: 3.9 }
+  - { name: lemon juice, amount: 15, unit: ml, kcal: 3, protein: 0.1, carbs: 1, fat: 0 }
+  - { name: mustard seeds, amount: 3, unit: g, kcal: 15, protein: 0.6, carbs: 1, fat: 1 }
+
+instructions:
+  - Cook rice and spread on a plate to cool completely.
+  - Heat coconut oil. Add mustard seeds and let them splutter.
+  - Add peanuts and curry leaves. Fry until peanuts are golden.
+  - Add turmeric, mix in the cooled rice, and stir well.
+  - Turn off heat. Squeeze lemon juice over the rice and mix gently. Serve warm.

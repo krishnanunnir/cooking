@@ -1,0 +1,21 @@
+title: "Chicken 65 & Rice"
+category: big
+servings: 1
+prep_time: "30 min"
+cook_time: "15 min"
+tags: [spicy, high_protein, indian]
+
+ingredients:
+  - { name: chicken breast, amount: 180, unit: g, kcal: 297, protein: 56, carbs: 0, fat: 6.5 }
+  - { name: rice, amount: 70, unit: g, kcal: 249, protein: 4.9, carbs: 55, fat: 0.4 }
+  - { name: coconut oil, amount: 8, unit: ml, kcal: 69, protein: 0, carbs: 0, fat: 8 }
+  - { name: yogurt, amount: 15, unit: g, kcal: 9, protein: 1.5, carbs: 0.5, fat: 0.1 }
+  - { name: corn flour, amount: 10, unit: g, kcal: 36, protein: 0, carbs: 9, fat: 0 }
+  - { name: kashmiri chili, amount: 5, unit: g, kcal: 15, protein: 0.6, carbs: 3, fat: 0.5 }
+
+instructions:
+  - Cut chicken into cubes. Marinate with yogurt, kashmiri chili, ginger-garlic paste, and salt for 25 minutes.
+  - Coat marinated chicken in corn flour. Press firmly.
+  - Heat oil and shallow fry the chicken pieces until crispy and deep red.
+  - Cook rice according to package directions.
+  - Garnish with curry leaves and serve hot over rice.

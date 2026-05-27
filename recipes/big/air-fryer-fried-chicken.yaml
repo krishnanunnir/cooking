@@ -6,7 +6,7 @@ cook_time: "16 min"
 tags: [high_protein, crispy]
 
 ingredients:
-  - { name: chicken thigh, amount: 220, unit: g, kcal: 460, protein: 57, carbs: 0, fat: 24 }
+  - { name: chicken breast, amount: 280, unit: g, kcal: 462, protein: 87, carbs: 0, fat: 10 }
   - { name: all purpose flour, amount: 50, unit: g, kcal: 182, protein: 5, carbs: 38, fat: 0.5 }
   - { name: buttermilk, amount: 10, unit: ml, kcal: 6, protein: 0.3, carbs: 0.5, fat: 0.2 }
   - { name: kashmiri chili powder, amount: 5, unit: g, kcal: 15, protein: 0.6, carbs: 3, fat: 0.5 }
@@ -14,7 +14,7 @@ ingredients:
   - { name: chicken masala, amount: 4, unit: g, kcal: 13, protein: 0.4, carbs: 2.4, fat: 0.4 }
 
 instructions:
-  - Cut chicken thigh into bite-sized pieces. Soak in buttermilk for 20 minutes.
+  - Cut chicken breast into bite-sized pieces. Soak in buttermilk for 20 minutes.
   - Mix flour, kashmiri chili powder, garam masala, chicken masala, and salt in a bowl.
   - Take chicken pieces from buttermilk and press firmly into the flour mixture. Coat thoroughly.
   - Place in air fryer at 200°C for 16 minutes. Flip halfway.

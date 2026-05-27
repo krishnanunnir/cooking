@@ -1,21 +1,21 @@
-title: "Chicken Curry"
+title: "Roti & Chicken Curry"
 category: big
 servings: 1
-prep_time: "10 min"
+prep_time: "15 min"
 cook_time: "25 min"
 tags: [high_protein, spicy]
 
 ingredients:
   - { name: chicken thigh, amount: 180, unit: g, kcal: 376, protein: 47, carbs: 0, fat: 20 }
-  - { name: rice, amount: 120, unit: g, kcal: 156, protein: 3.2, carbs: 34, fat: 0.4 }
-  - { name: coconut milk, amount: 50, unit: ml, kcal: 115, protein: 1.2, carbs: 1.7, fat: 12 }
+  - { name: roti, amount: 2, unit: pieces, kcal: 160, protein: 4, carbs: 32, fat: 2 }
+  - { name: coconut milk, amount: 40, unit: ml, kcal: 92, protein: 0.9, carbs: 1.4, fat: 10 }
   - { name: onion, amount: 50, unit: g, kcal: 20, protein: 0.6, carbs: 4.5, fat: 0.1 }
   - { name: curry paste, amount: 20, unit: g, kcal: 30, protein: 1, carbs: 3, fat: 1.5 }
 
 instructions:
-  - Cook rice according to package directions.
   - Dice chicken thigh into chunks. Season with salt.
   - Sauté onion in a pan until soft. Add curry paste and cook for 1 minute.
   - Add chicken and cook until browned on all sides.
   - Pour in coconut milk, simmer for 15 minutes until chicken is tender.
-  - Serve over rice.
+  - Warm the pre-made rotis on a hot pan or direct flame.
+  - Serve the chicken curry with warm rotis.

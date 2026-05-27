@@ -99,6 +99,9 @@ tr.per-serving td{border-bottom:none;color:#e07c3c;font-weight:600}
 .amt-input:focus{border-color:#e07c3c;background:#fffdfa}
 .amt-unit{color:#888;font-size:.8rem}
 #servings-input:focus{border-color:#e07c3c;outline:none}
+.pin-btn{border:2px solid #ddd;border-radius:8px;padding:6px 12px;font-size:.85rem;cursor:pointer;background:#f5f5f5;color:#666;display:flex;align-items:center;gap:6px}
+.pin-btn:hover{border-color:#999}
+.pin-btn.pinned{background:#fff3e0;border-color:#e07c3c;color:#e07c3c;font-weight:600}
 
 .instructions{margin:16px 0}
 .instructions li{margin-bottom:8px;padding-left:8px}
@@ -370,6 +373,13 @@ def build_recipe_pages(recipes):
             <div class="val"><input type="number" id="servings-input" value="{servings}" min="1" step="1" style="width:48px;text-align:center;font-size:1.1rem;font-weight:700;border:1px solid #ddd;border-radius:6px;padding:4px"></div>
             <div class="lbl">Servings</div></div>
           <div class="meta-item"><div class="val" id="kcalserv">{fmt(per['kcal'])}</div><div class="lbl">kcal/serving</div></div>
+          <div class="meta-item">
+            <div class="val" style="display:flex;align-items:center;gap:6px;justify-content:center">
+              <span id="tot-kcal-display" style="font-size:1.1rem;font-weight:600">{fmt(tot['kcal'])}</span>
+              <button id="pin-btn" class="pin-btn" title="Lock total calories. Increase one = others shrink."><span id="pin-icon">✏️</span> <span id="pin-label">Unlocked</span></button>
+            </div>
+            <div class="lbl">Total kcal <span id="pin-status" style="color:#888">(unlocked)</span></div>
+          </div>
         </div>
         
         <div class="card">
@@ -408,54 +418,160 @@ def build_recipe_pages(recipes):
         const servingsInput = document.getElementById('servings-input');
         const tbody = document.getElementById('nut-tbody');
         const inputs = tbody.querySelectorAll('.amt-input');
+        const pinBtn = document.getElementById('pin-btn');
+        const pinStatus = document.getElementById('pin-status');
+        const totDisplay = document.getElementById('tot-kcal-display');
+        
+        var pinned = false;
+        var lockedTotal = 0;
+        
+        function calcKcal(amt, d) {{
+          return Math.round(d.kcal_p100 * (amt / 100) * 10) / 10;
+        }}
+        
+        function calcAmtFromKcal(targetKcal, d) {{
+          return Math.round((targetKcal / (d.kcal_p100 / 100)) * 10) / 10;
+        }}
+        
+        function getIngredientKcals() {{
+          var kcals = [];
+          inputs.forEach((inp, i) => {{
+            var amt = parseFloat(inp.value) || 0;
+            kcals.push(calcKcal(amt, DATA[i]));
+          }});
+          return kcals;
+        }}
 
-        function update() {{
+        function update(changedIndex) {{
           const sv = parseFloat(servingsInput.value) || 1;
-          let tKcal = 0, tPro = 0, tCarb = 0, tFat = 0;
-
+          var kcals = getIngredientKcals();
+          
+          // If pinned and an ingredient changed, redistribute
+          if (pinned && changedIndex !== undefined) {{
+            var oldTotal = lockedTotal;
+            var newKcal = kcals[changedIndex];
+            var oldKcal = parseFloat(inputs[changedIndex].dataset.lastKcal) || newKcal;
+            var delta = newKcal - oldKcal;
+            
+            if (delta !== 0) {{
+              // Redistribute delta across OTHER ingredients
+              var otherTotal = 0;
+              var otherIndices = [];
+              for (var j = 0; j < kcals.length; j++) {{
+                if (j !== changedIndex) {{
+                  otherTotal += kcals[j];
+                  otherIndices.push(j);
+                }}
+              }}
+              
+              if (otherTotal > 0) {{
+                for (var j = 0; j < otherIndices.length; j++) {{
+                  var idx = otherIndices[j];
+                  var share = kcals[idx] / otherTotal;
+                  var newOtherKcal = kcals[idx] - delta * share;
+                  if (newOtherKcal < 0) newOtherKcal = 0;
+                  inputs[idx].value = calcAmtFromKcal(newOtherKcal, DATA[idx]);
+                  kcals[idx] = calcKcal(parseFloat(inputs[idx].value) || 0, DATA[idx]);
+                }}
+              }}
+            }}
+          }}
+          
+          // Store last kcal for next change detection
+          inputs.forEach((inp, i) => {{
+            inp.dataset.lastKcal = kcals[i];
+          }});
+          
+          // Update table cells
+          var tKcal = 0, tPro = 0, tCarb = 0, tFat = 0;
           inputs.forEach((input, i) => {{
-            const newAmt = parseFloat(input.value) || 0;
-            const d = DATA[i];
-            // Recalculate using per-100g rates
-            const scale = newAmt / 100;
-            const kcal = Math.round(d.kcal_p100 * scale * 10) / 10;
-            const pro  = Math.round(d.protein_p100 * scale * 10) / 10;
-            const carb = Math.round(d.carbs_p100 * scale * 10) / 10;
-            const fat  = Math.round(d.fat_p100 * scale * 10) / 10;
-
-            const cells = input.closest('tr').querySelectorAll('td');
+            var amt = parseFloat(input.value) || 0;
+            var d = DATA[i];
+            var scale = amt / 100;
+            var kcal = Math.round(d.kcal_p100 * scale * 10) / 10;
+            var pro  = Math.round(d.protein_p100 * scale * 10) / 10;
+            var carb = Math.round(d.carbs_p100 * scale * 10) / 10;
+            var fat  = Math.round(d.fat_p100 * scale * 10) / 10;
+            
+            var cells = input.closest('tr').querySelectorAll('td');
             cells[2].textContent = kcal;
             cells[3].textContent = pro + 'g';
             cells[4].textContent = carb + 'g';
             cells[5].textContent = fat + 'g';
-
+            
             tKcal += kcal; tPro += pro; tCarb += carb; tFat += fat;
           }});
-
+          
           tKcal = Math.round(tKcal * 10) / 10;
           tPro  = Math.round(tPro * 10) / 10;
           tCarb = Math.round(tCarb * 10) / 10;
           tFat  = Math.round(tFat * 10) / 10;
-
+          
+          if (pinned) {{
+            totDisplay.textContent = lockedTotal;
+            tKcal = lockedTotal;
+          }} else {{
+            totDisplay.textContent = tKcal;
+          }}
+          
           document.getElementById('tot-kcal').innerHTML = '<strong>' + tKcal + '</strong>';
           document.getElementById('tot-pro').innerHTML  = '<strong>' + tPro + 'g</strong>';
           document.getElementById('tot-carb').innerHTML = '<strong>' + tCarb + 'g</strong>';
           document.getElementById('tot-fat').innerHTML  = '<strong>' + tFat + 'g</strong>';
-
+          
           const sk = Math.round(tKcal / sv * 10) / 10;
           const sp = Math.round(tPro / sv * 10) / 10;
           const sc = Math.round(tCarb / sv * 10) / 10;
           const sf = Math.round(tFat / sv * 10) / 10;
-
+          
           document.getElementById('per-kcal').innerHTML = '<strong>' + sk + '</strong>';
           document.getElementById('per-pro').innerHTML  = '<strong>' + sp + 'g</strong>';
           document.getElementById('per-carb').innerHTML = '<strong>' + sc + 'g</strong>';
           document.getElementById('per-fat').innerHTML  = '<strong>' + sf + 'g</strong>';
           document.getElementById('kcalserv').textContent = sk;
         }}
-
-        inputs.forEach(inp => inp.addEventListener('input', update));
-        servingsInput.addEventListener('input', update);
+        
+        // Pin toggle
+        pinBtn.addEventListener('click', function() {{
+          pinned = !pinned;
+          if (pinned) {{
+            document.getElementById('pin-icon').textContent = '📌';
+            document.getElementById('pin-label').textContent = 'Locked';
+            pinBtn.classList.add('pinned');
+            pinStatus.textContent = '(locked)';
+            pinStatus.style.color = '#e07c3c';
+            // Lock to current total
+            var kcals = getIngredientKcals();
+            lockedTotal = Math.round(kcals.reduce((a,b) => a+b, 0) * 10) / 10;
+            totDisplay.textContent = lockedTotal;
+            // Store current kcals
+            inputs.forEach((inp, i) => {{
+              inp.dataset.lastKcal = kcals[i];
+            }});
+          }} else {{
+            document.getElementById('pin-icon').textContent = '✏️';
+            document.getElementById('pin-label').textContent = 'Unlocked';
+            pinBtn.classList.remove('pinned');
+            pinStatus.textContent = '(unlocked)';
+            pinStatus.style.color = '#888';
+          }}
+        }});
+        
+        // Track changes with input event
+        inputs.forEach(inp => {{
+          inp.addEventListener('input', function() {{
+            var idx = Array.prototype.indexOf.call(inputs, this);
+            update(idx);
+          }});
+        }});
+        servingsInput.addEventListener('input', function() {{ update(); }});
+        
+        // Initialize lastKcal
+        (function init() {{
+          var kcals = getIngredientKcals();
+          inputs.forEach((inp, i) => {{ inp.dataset.lastKcal = kcals[i]; }});
+          update();
+        }})();
         </script>
         """
         

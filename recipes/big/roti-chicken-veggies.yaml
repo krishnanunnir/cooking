@@ -1,0 +1,21 @@
+title: "Roti Chicken & Veggies"
+category: big
+servings: 1
+prep_time: "10 min"
+cook_time: "20 min"
+tags: [high_protein, vegetables]
+
+ingredients:
+  - { name: chicken breast, amount: 180, unit: g, kcal: 297, protein: 56, carbs: 0, fat: 6.5 }
+  - { name: roti, amount: 2, unit: pieces, kcal: 160, protein: 4, carbs: 32, fat: 2 }
+  - { name: mixed vegetables, amount: 100, unit: g, kcal: 60, protein: 2.5, carbs: 12, fat: 0.5 }
+  - { name: olive oil, amount: 12, unit: ml, kcal: 106, protein: 0, carbs: 0, fat: 12 }
+  - { name: garlic, amount: 3, unit: cloves, kcal: 12, protein: 0.5, carbs: 2.7, fat: 0 }
+
+instructions:
+  - Dice chicken breast into bite-sized pieces. Season with salt and pepper.
+  - Heat oil in a pan. Sauté minced garlic until fragrant.
+  - Add chicken and cook until golden and cooked through.
+  - Add mixed vegetables and stir-fry for 3-4 minutes.
+  - Warm the rotis on a hot pan or direct flame.
+  - Serve the chicken and veggies with warm rotis.

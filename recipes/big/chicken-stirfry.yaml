@@ -12,7 +12,7 @@ ingredients:
   - { name: soy sauce, amount: 40, unit: ml, kcal: 21, protein: 3.2, carbs: 2, fat: 0 }
   - { name: garlic, amount: 3, unit: cloves, kcal: 12, protein: 0.5, carbs: 2.7, fat: 0 }
   - { name: olive oil, amount: 20, unit: ml, kcal: 177, protein: 0, carbs: 0, fat: 20 }
-  - { name: rice, amount: 280, unit: g, kcal: 364, protein: 7.6, carbs: 78, fat: 0.8 }
+  - { name: rice, amount: 100, unit: g, kcal: 355, protein: 7, carbs: 78, fat: 0.5 }
 
 instructions:
   - Dice chicken breast into bite-sized pieces. Season with salt and pepper.

@@ -1,0 +1,22 @@
+title: "Egg Fried Rice"
+category: big
+servings: 1
+prep_time: "5 min"
+cook_time: "10 min"
+tags: [quick, high_protein, comfort]
+
+ingredients:
+  - { name: rice, amount: 80, unit: g, kcal: 284, protein: 5.6, carbs: 62, fat: 0.4 }
+  - { name: eggs, amount: 3, unit: large, kcal: 233, protein: 19.5, carbs: 1.7, fat: 16.5 }
+  - { name: mixed vegetables, amount: 80, unit: g, kcal: 48, protein: 2, carbs: 10, fat: 0.4 }
+  - { name: sesame oil, amount: 10, unit: ml, kcal: 88, protein: 0, carbs: 0, fat: 10 }
+  - { name: soy sauce, amount: 15, unit: ml, kcal: 8, protein: 1.2, carbs: 0.8, fat: 0 }
+  - { name: garlic, amount: 2, unit: cloves, kcal: 8, protein: 0.4, carbs: 1.8, fat: 0 }
+
+instructions:
+  - Cook rice according to package directions. Spread on a plate to cool.
+  - Heat sesame oil in a wok over high heat.
+  - Whisk eggs and scramble them in the wok. Remove and set aside.
+  - Add minced garlic and mixed vegetables. Stir-fry for 2 minutes.
+  - Add the cold rice and soy sauce. Stir-fry for 3 minutes.
+  - Return the scrambled eggs and toss everything together. Serve hot.

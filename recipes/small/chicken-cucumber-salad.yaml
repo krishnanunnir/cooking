@@ -1,0 +1,21 @@
+title: "Chicken Cucumber Salad"
+category: small
+servings: 1
+prep_time: "10 min"
+cook_time: "0 min"
+tags: [high_protein, vegetables]
+
+ingredients:
+  - { name: chicken breast, amount: 80, unit: g, kcal: 132, protein: 25, carbs: 0, fat: 2.9 }
+  - { name: cucumber, amount: 150, unit: g, kcal: 23, protein: 1, carbs: 4, fat: 0.2 }
+  - { name: carrot, amount: 100, unit: g, kcal: 41, protein: 0.9, carbs: 10, fat: 0.2 }
+  - { name: soy sauce, amount: 15, unit: ml, kcal: 8, protein: 1.2, carbs: 0.8, fat: 0 }
+  - { name: honey, amount: 10, unit: g, kcal: 30, protein: 0, carbs: 8.2, fat: 0 }
+  - { name: white vinegar, amount: 10, unit: ml, kcal: 3, protein: 0, carbs: 0.1, fat: 0 }
+  - { name: sesame oil, amount: 5, unit: ml, kcal: 44, protein: 0, carbs: 0, fat: 5 }
+
+instructions:
+  - Shred or dice cooked chicken breast.
+  - Slice cucumber and grate or julienne the carrot.
+  - In a small bowl, whisk together soy sauce, honey, white vinegar, and sesame oil.
+  - Toss everything together and serve cold.

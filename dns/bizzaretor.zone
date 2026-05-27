@@ -1,0 +1,11 @@
+$ORIGIN bizzaretor.com.
+$TTL 3600
+
+; GitHub Pages apex domain
+@    IN  A    185.199.108.153
+@    IN  A    185.199.109.153
+@    IN  A    185.199.110.153
+@    IN  A    185.199.111.153
+
+; WWW subdomain → GitHub Pages
+www  IN  CNAME  krishnanunnir.github.io.

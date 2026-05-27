@@ -1,0 +1,21 @@
+title: "Fried Rice"
+category: big
+servings: 1
+prep_time: "5 min"
+cook_time: "10 min"
+tags: [quick, comfort]
+
+ingredients:
+  - { name: rice, amount: 200, unit: g, kcal: 260, protein: 5.4, carbs: 56, fat: 0.6 }
+  - { name: eggs, amount: 2, unit: large, kcal: 155, protein: 13, carbs: 1.1, fat: 11 }
+  - { name: chicken breast, amount: 80, unit: g, kcal: 132, protein: 25, carbs: 0, fat: 2.9 }
+  - { name: mixed vegetables, amount: 60, unit: g, kcal: 25, protein: 1.2, carbs: 5, fat: 0.2 }
+  - { name: soy sauce, amount: 15, unit: ml, kcal: 8, protein: 1.2, carbs: 0.8, fat: 0 }
+  - { name: sesame oil, amount: 8, unit: ml, kcal: 70, protein: 0, carbs: 0, fat: 8 }
+
+instructions:
+  - Heat oil in a wok over high heat.
+  - Scramble the eggs and set aside.
+  - Stir-fry diced chicken until cooked through.
+  - Add cold rice and mixed vegetables. Stir-fry for 3-4 minutes.
+  - Add soy sauce and scrambled eggs. Toss everything together and serve.

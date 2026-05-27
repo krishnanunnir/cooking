@@ -1,0 +1,19 @@
+title: "Chicken Rice"
+category: big
+servings: 1
+prep_time: "5 min"
+cook_time: "20 min"
+tags: [high_protein, simple]
+
+ingredients:
+  - { name: chicken breast, amount: 200, unit: g, kcal: 330, protein: 62, carbs: 0, fat: 7.2 }
+  - { name: rice, amount: 200, unit: g, kcal: 260, protein: 5.4, carbs: 56, fat: 0.6 }
+  - { name: olive oil, amount: 8, unit: ml, kcal: 71, protein: 0, carbs: 0, fat: 8 }
+  - { name: soy sauce, amount: 15, unit: ml, kcal: 8, protein: 1.2, carbs: 0.8, fat: 0 }
+  - { name: garlic, amount: 2, unit: cloves, kcal: 8, protein: 0.4, carbs: 1.8, fat: 0 }
+
+instructions:
+  - Season chicken breast with salt and pepper.
+  - Heat oil in a pan and cook chicken for 5-6 minutes each side until golden and cooked through.
+  - Meanwhile, cook rice according to package directions.
+  - Slice chicken and serve over rice with minced garlic and soy sauce.

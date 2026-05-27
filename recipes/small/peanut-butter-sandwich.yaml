@@ -1,0 +1,15 @@
+title: "Peanut Butter Sandwich"
+category: small
+servings: 1
+prep_time: "2 min"
+cook_time: "0 min"
+tags: [quick, vegetarian]
+
+ingredients:
+  - { name: bread, amount: 2, unit: slices, kcal: 140, protein: 5, carbs: 26, fat: 2 }
+  - { name: peanut butter, amount: 24, unit: g, kcal: 141, protein: 6, carbs: 5, fat: 12 }
+
+instructions:
+  - Toast the bread if desired.
+  - Spread peanut butter evenly on both slices.
+  - Press together and serve.

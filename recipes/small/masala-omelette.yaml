@@ -1,0 +1,21 @@
+title: "Masala Omelette"
+category: small
+servings: 1
+prep_time: "5 min"
+cook_time: "5 min"
+tags: [quick, high_protein, indian]
+
+ingredients:
+  - { name: eggs, amount: 3, unit: large, kcal: 233, protein: 19.5, carbs: 1.7, fat: 16.5 }
+  - { name: onion, amount: 30, unit: g, kcal: 12, protein: 0.3, carbs: 2.7, fat: 0 }
+  - { name: tomato, amount: 30, unit: g, kcal: 5, protein: 0.3, carbs: 1.2, fat: 0.1 }
+  - { name: green chili, amount: 1, unit: piece, kcal: 4, protein: 0.2, carbs: 0.9, fat: 0 }
+  - { name: olive oil, amount: 4, unit: ml, kcal: 35, protein: 0, carbs: 0, fat: 4 }
+
+instructions:
+  - Finely chop onion, tomato, and green chili.
+  - Whisk eggs with salt, turmeric, and red chili powder.
+  - Heat oil in a non-stick pan. Sauté onion for 1 minute.
+  - Add tomato and chili. Cook for 30 seconds.
+  - Pour the eggs over the vegetables. Spread evenly.
+  - Cook on medium-low until set. Flip and cook the other side. Serve hot.

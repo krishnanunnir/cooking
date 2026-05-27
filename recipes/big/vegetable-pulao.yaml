@@ -1,0 +1,23 @@
+title: "Vegetable Pulao"
+category: big
+servings: 1
+prep_time: "10 min"
+cook_time: "20 min"
+tags: [vegetarian, indian, aromatic]
+
+ingredients:
+  - { name: rice, amount: 95, unit: g, kcal: 337, protein: 6.7, carbs: 74, fat: 0.5 }
+  - { name: mixed vegetables, amount: 160, unit: g, kcal: 90, protein: 3.5, carbs: 19, fat: 0.8 }
+  - { name: onion, amount: 80, unit: g, kcal: 32, protein: 0.9, carbs: 7.2, fat: 0.1 }
+  - { name: ghee, amount: 12, unit: ml, kcal: 106, protein: 0, carbs: 0, fat: 12 }
+  - { name: cashews, amount: 15, unit: g, kcal: 87, protein: 2.7, carbs: 4.5, fat: 6.6 }
+  - { name: garlic, amount: 3, unit: cloves, kcal: 12, protein: 0.5, carbs: 2.7, fat: 0 }
+
+instructions:
+  - Wash and soak rice for 15 minutes. Drain.
+  - Heat ghee in a pot. Add whole spices (bay leaf, cardamom, cloves, cinnamon) and sauté for 30 seconds.
+  - Add sliced onion and minced garlic. Cook until golden.
+  - Add chopped vegetables, cashews, salt, and garam masala. Cook for 2 minutes.
+  - Add the drained rice and stir gently for 1 minute.
+  - Pour 2.5 cups of water, bring to a boil, cover, and simmer for 15 minutes.
+  - Fluff with a fork and serve hot.

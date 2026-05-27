@@ -1,0 +1,16 @@
+title: "Papaya Bowl"
+category: small
+servings: 1
+prep_time: "5 min"
+cook_time: "0 min"
+tags: [fruit, quick, healthy]
+
+ingredients:
+  - { name: papaya, amount: 300, unit: g, kcal: 129, protein: 1.4, carbs: 33, fat: 0.3 }
+  - { name: grated coconut, amount: 20, unit: g, kcal: 71, protein: 0.6, carbs: 3, fat: 6.7 }
+  - { name: honey, amount: 15, unit: g, kcal: 46, protein: 0, carbs: 12.3, fat: 0 }
+  - { name: chia seeds, amount: 10, unit: g, kcal: 49, protein: 1.7, carbs: 4.2, fat: 3.1 }
+
+instructions:
+  - Scoop out papaya seeds and cut flesh into bite-sized pieces.
+  - Top with grated coconut, drizzle honey, and sprinkle chia seeds.

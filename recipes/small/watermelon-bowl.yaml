@@ -1,0 +1,16 @@
+title: "Watermelon Bowl"
+category: small
+servings: 1
+prep_time: "5 min"
+cook_time: "0 min"
+tags: [fruit, quick, healthy]
+
+ingredients:
+  - { name: watermelon, amount: 480, unit: g, kcal: 144, protein: 3, carbs: 36, fat: 0.7 }
+  - { name: grated coconut, amount: 20, unit: g, kcal: 71, protein: 0.6, carbs: 3, fat: 6.7 }
+  - { name: honey, amount: 10, unit: g, kcal: 30, protein: 0, carbs: 8.2, fat: 0 }
+  - { name: chia seeds, amount: 10, unit: g, kcal: 49, protein: 1.7, carbs: 4.2, fat: 3.1 }
+
+instructions:
+  - Cut watermelon into cubes and place in a bowl.
+  - Top with grated coconut, drizzle honey, and sprinkle chia seeds.

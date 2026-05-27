@@ -752,6 +752,11 @@ def build():
     build_category_pages(recipes)
     build_recipe_pages(recipes)
     build_plan_page(recipes)
+    
+    # Write CNAME for custom domain
+    with open(BUILD_DIR / "CNAME", "w") as f:
+        f.write("cooking.bizzaretor.com")
+    
     print(f"\n  ✅ Site built at: {BUILD_DIR}")
     print(f"  🌐 Open: {BUILD_DIR / 'index.html'}\n")
 

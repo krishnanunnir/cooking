@@ -11,7 +11,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent
 RECIPES_DIR = ROOT / "recipes"
-BUILD_DIR = ROOT / "build"
+BUILD_DIR = ROOT / "docs"
 
 
 # ── Helpers ────────────────────────────────────────────────────────────

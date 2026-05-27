@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Plan — Cooking</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
+</head>
+<body>
+<header>
+<h1><a href="../index.html">🍳 Cooking</a></h1>
+<nav>
+  <a href="../index.html" class="">All Recipes</a>
+  <a href="../plan/index.html" class="active">Weekly Plan</a>
+</nav>
+</header>
+<div class="layout">
+
+    <div class="page-title" style="margin-bottom:4px">📅 Weekly Meal Plan</div>
+    <p style="color:#888;margin-bottom:8px">Each day: <strong>2 Big</strong> (≈700 ea) + <strong>1 Small</strong> (≈300) + <strong>2x Tea</strong> (≈130) = <strong>≈1,830 kcal</strong></p>
+    <p style="color:#888;font-size:.85rem;margin-bottom:4px">🎉 <strong>1-3 treat days</strong> get an extra <strong>Very Small</strong> (≈150 kcal) on top</p>
+    <p style="color:#aaa;font-size:.85rem;margin-bottom:20px">Shuffle for a new random plan</p>
+    
+    <div id="plan"></div>
+    
+    <div style="text-align:center;margin:20px 0">
+      <button class="calc-btn" onclick="generate()">Shuffle</button>
+      <span id="seed-display" style="display:inline-block;margin-left:16px;font-size:.85rem;color:#aaa"></span>
+    </div>
+    
+    <script>
+    const RECIPES = {"big": [{"name": "Chicken Fried Rice", "slug": "../big/chicken-fried-rice.html", "kcal": 639.0}, {"name": "Chicken Rice", "slug": "../big/chicken-rice.html", "kcal": 666.0}, {"name": "Chicken Stir Fry", "slug": "../big/chicken-stirfry.html", "kcal": 692.0}, {"name": "Dal & Rice", "slug": "../big/dal-rice.html", "kcal": 697.0}, {"name": "Egg Fried Rice", "slug": "../big/egg-fried-rice.html", "kcal": 669.0}, {"name": "Khichdi", "slug": "../big/khichdi.html", "kcal": 678.0}, {"name": "Rice & Soybean Curry", "slug": "../big/rice-soy-curry.html", "kcal": 689.0}, {"name": "Roti & Chicken Curry", "slug": "../big/roti-chicken-curry.html", "kcal": 678.0}, {"name": "Roti Chicken & Veggies", "slug": "../big/roti-chicken-veggies.html", "kcal": 635.0}, {"name": "Vegetable Pulao", "slug": "../big/vegetable-pulao.html", "kcal": 664.0}], "small": [{"name": "Chicken Cucumber Salad", "slug": "../small/chicken-cucumber-salad.html", "kcal": 281.0}, {"name": "Curd Rice", "slug": "../small/curd-rice.html", "kcal": 299.0}, {"name": "Masala Omelette", "slug": "../small/masala-omelette.html", "kcal": 289.0}, {"name": "Nendran Banana", "slug": "../small/nendran-banana.html", "kcal": 279.0}, {"name": "Overnight Oats", "slug": "../small/overnight-oats.html", "kcal": 293.0}, {"name": "Pancakes & Honey", "slug": "../small/pancakes-honey.html", "kcal": 289.0}, {"name": "Papaya Bowl", "slug": "../small/papaya-bowl.html", "kcal": 295.0}, {"name": "Peanut Butter Sandwich", "slug": "../small/peanut-butter-sandwich.html", "kcal": 281.0}, {"name": "Scrambled Eggs on Toast", "slug": "../small/scrambled-eggs.html", "kcal": 287.0}, {"name": "Upma", "slug": "../small/upma.html", "kcal": 296.0}, {"name": "Watermelon Bowl", "slug": "../small/watermelon-bowl.html", "kcal": 294.0}], "very_small": [{"name": "Greek Yogurt Bowl", "slug": "../very-small/greek-yogurt-bowl.html", "kcal": 147.0}, {"name": "Protein Smoothie", "slug": "../very-small/protein-smoothie.html", "kcal": 140.0}], "free": [{"name": "Mint Black Tea", "slug": "../free/mint-black-tea.html", "kcal": 65.0}]};
+    const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+    // Seeded PRNG (mulberry32)
+    function mulberry32(a) {
+      return function() {
+        a |= 0; a = a + 0x6D2B79F5 | 0;
+        var t = Math.imul(a ^ a >>> 15, 1 | a);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      }
+    }
+
+    // Seed = current week number (weeks since Jan 1 2020)
+    // Override with ?seed=XXX for a specific plan
+    var params = new URLSearchParams(window.location.search);
+    var seed;
+    if (params.has('seed')) {
+      seed = parseInt(params.get('seed'), 10);
+      if (isNaN(seed)) seed = currentWeek();
+    } else {
+      seed = currentWeek();
+    }
+
+    function currentWeek() {
+      return Math.floor(Date.now() / (7 * 86400000));
+    }
+
+    var rng = mulberry32(seed);
+
+    function pick(arr) {
+      return arr[Math.floor(rng() * arr.length)];
+    }
+
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(rng() * (i + 1));
+        var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+      }
+      return a;
+    }
+
+    function generate() {
+      const container = document.getElementById('plan');
+      let html = '';
+      let weekTotal = 0;
+
+      // Pick 1-3 random treat days
+      const numTreatDays = 1 + Math.floor(rng() * 3);
+      const treatDays = shuffle(DAYS).slice(0, numTreatDays);
+
+      DAYS.forEach(day => {
+        var big1 = pick(RECIPES.big);
+        var big2 = pick(RECIPES.big);
+        // Ensure the two bigs are different
+        while (big2.name === big1.name) {
+          big2 = pick(RECIPES.big);
+        }
+        const small = pick(RECIPES.small);
+        const tea = RECIPES.free.length ? RECIPES.free[0] : null;
+        const teaKcal = tea ? tea.kcal * 2 : 0;  // 2 cups per day
+        const isTreat = treatDays.includes(day);
+        const vs = isTreat ? pick(RECIPES.very_small) : null;
+        const dayTotal = big1.kcal + big2.kcal + small.kcal + teaKcal + (vs ? vs.kcal : 0);
+        weekTotal += dayTotal;
+
+        let mealsHtml = '<div class="meal meal-big"><span class="meal-badge big-badge">Big 1</span><a href="' + big1.slug + '" class="meal-name">' + big1.name + '</a><span class="meal-kcal">' + Math.round(big1.kcal) + ' kcal</span></div>' +
+          '<div class="meal meal-big"><span class="meal-badge big-badge">Big 2</span><a href="' + big2.slug + '" class="meal-name">' + big2.name + '</a><span class="meal-kcal">' + Math.round(big2.kcal) + ' kcal</span></div>' +
+          '<div class="meal meal-small"><span class="meal-badge small-badge">Small</span><a href="' + small.slug + '" class="meal-name">' + small.name + '</a><span class="meal-kcal">' + Math.round(small.kcal) + ' kcal</span></div>';
+
+        // 2 cups of tea every day
+        if (tea) {
+          mealsHtml += '<div class="meal meal-free"><span class="meal-badge free-badge">☕ 2x</span><a href="' + tea.slug + '" class="meal-name">' + tea.name + '</a><span class="meal-kcal">' + Math.round(teaKcal) + ' kcal</span></div>';
+        }
+
+        if (isTreat && vs) {
+          mealsHtml += '<div class="meal meal-vsmall"><span class="meal-badge vs-badge">🎉 Treat</span><a href="' + vs.slug + '" class="meal-name">' + vs.name + '</a><span class="meal-kcal">' + Math.round(vs.kcal) + ' kcal</span></div>';
+        }
+
+        html += '<div class="card day-card' + (isTreat ? ' treat-day' : '') + '">' +
+          '<div class="day-header"><span class="day-name">' + day + '</span><span class="day-total">' + Math.round(dayTotal) + ' kcal</span></div>' +
+          '<div class="day-meals">' + mealsHtml + '</div></div>';
+      });
+
+      const avg = Math.round(weekTotal / 7);
+      html += '<div class="week-summary"><strong>Week Total:</strong> ' + Math.round(weekTotal) + ' kcal &middot; <strong>Daily Avg:</strong> ' + avg + ' kcal</div>';
+
+      container.innerHTML = html;
+    }
+
+    generate();
+
+    // Update URL with seed (without reloading)
+    if (!params.has('seed')) {
+      var newUrl = window.location.pathname + '?seed=' + seed;
+      window.history.replaceState(null, '', newUrl);
+    }
+
+    // Show seed for bookmarking
+    var seedDisplay = document.getElementById('seed-display');
+    if (seedDisplay) {
+      var url = window.location.pathname + '?seed=' + seed;
+      seedDisplay.innerHTML = 'Week <a href="' + url + '" style="color:#888;text-decoration:underline">#' + seed + '</a>';
+    }
+    </script>
+    
+</div>
+<footer>Generated from YAML recipes • Open in any browser</footer>
+</body>
+</html>
